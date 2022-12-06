@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PopShowcaseComponent } from './pop-showcase/pop-showcase.component';
 import {SharedModule} from "../../shared/shared.module";
 import {PopListComponent} from "./pop-list/pop-list.component";
 import {MatTableModule} from "@angular/material/table";
@@ -15,11 +14,9 @@ import {MatTooltipModule} from "@angular/material/tooltip";
 
 @NgModule({
   declarations: [
-    PopShowcaseComponent,
     PopListComponent
   ],
   exports: [
-    PopShowcaseComponent,
     PopListComponent
   ],
   imports: [
