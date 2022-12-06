@@ -2,15 +2,28 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import {LayoutModule} from "./core/layout/layout.module";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatCardModule} from "@angular/material/card";
+import {PopModule} from "./features/pop/pop.module";
 
+// Indica che questa classe è un modulo (decoratore)
 @NgModule({
+  // array di componenti che questo modulo dovrà gestire
   declarations: [
     AppComponent
   ],
+  // array di moduli che questo modulo dovrà importarsi
   imports: [
-    BrowserModule
+    BrowserModule,
+    LayoutModule,
+    BrowserAnimationsModule,
+    MatCardModule,
+    PopModule
   ],
   providers: [],
+  // proprietà che definisce il componente che dovrà carcare per primo
   bootstrap: [AppComponent]
 })
+// un modulo è una classe
 export class AppModule { }
