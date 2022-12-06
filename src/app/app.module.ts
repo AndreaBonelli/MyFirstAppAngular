@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import {LayoutModule} from "./core/layout/layout.module";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from "@angular/material/card";
-import {PopModule} from "./features/pop/pop.module";
+import {SuperheroesModule} from "./features/superheroes/superheroes.module";
 
 // Indica che questa classe è un modulo (decoratore)
 @NgModule({
@@ -19,7 +19,7 @@ import {PopModule} from "./features/pop/pop.module";
     LayoutModule,
     BrowserAnimationsModule,
     MatCardModule,
-    PopModule
+    SuperheroesModule
   ],
   providers: [],
   // proprietà che definisce il componente che dovrà carcare per primo

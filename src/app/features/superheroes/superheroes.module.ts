@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {SharedModule} from "../../shared/shared.module";
-import {PopListComponent} from "./pop-list/pop-list.component";
+import {SuperheroesTableComponent} from "./superheroes-table/superheroes-table.component";
 import {MatTableModule} from "@angular/material/table";
 import {MatInputModule} from "@angular/material/input";
 import {MatSelectModule} from "@angular/material/select";
@@ -14,10 +14,10 @@ import {MatTooltipModule} from "@angular/material/tooltip";
 
 @NgModule({
   declarations: [
-    PopListComponent
+    SuperheroesTableComponent
   ],
   exports: [
-    PopListComponent
+    SuperheroesTableComponent
   ],
   imports: [
     CommonModule,
@@ -31,4 +31,4 @@ import {MatTooltipModule} from "@angular/material/tooltip";
     MatTooltipModule
   ]
 })
-export class PopModule { }
+export class SuperheroesModule { }
