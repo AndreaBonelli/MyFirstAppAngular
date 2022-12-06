@@ -1,8 +1,5 @@
-<h1 mat-dialog-title>Ciao!</h1>
-<div mat-dialog-content>
-  <p>Sei proprio sicuro?</p>
-</div>
+<h1 mat-dialog-title>Sei proprio sicuro?</h1>
 <div mat-dialog-actions>
-  <button mat-button >No, grazie</button>
-  <!--<button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Yes</button>-->
+  <button mat-button (click)="refuse()">No, grazie</button>
+  <button mat-button (click)="confirm()" >Si</button>
 </div>

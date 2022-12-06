@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {PopModel} from "../../../shared/model/pop.model";
 import {MatTableDataSource} from "@angular/material/table";
 import { MatDialog } from '@angular/material/dialog';
+import {DialogComponent} from "../../../shared/components/dialog/dialog.component";
 //import {PopModel} from "../../../shared/model/pop.model";
 //import {DialogComponent} from "../../../shared/components/dialog";
 
@@ -49,16 +50,19 @@ export class PopListComponent {
     this.dataSource.data=this.popList;
   }
 
+  openDialog(element: PopModel){
+    let dialogRef = this.dialog.open(DialogComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      if(result)
+        this.removeSuperhero(element);
+    });
+
+  }
   removeSuperhero(element: PopModel){
       const index = this.popList.findIndex(el => el.name == element.name);
       this.popList.splice(index,1);
       this.dataSource.data=this.popList;
-
-    /*
-    let dialogRef = this.dialog.open( {
-    width: '250px',
-    data: { name: this.name, animal: this.animal }
-  */
     };
 
   isEditable(element: PopModel) {

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {MatDialogRef} from "@angular/material/dialog";
 //import {MatDialog} from "@angular/material/dialog";
 
 
@@ -8,7 +9,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./dialog.component.scss']
 })
 export class DialogComponent {
-  onNoClick() {
 
+  constructor(public dialogRef: MatDialogRef<DialogComponent>) {
+  }
+  confirm() {
+    this.dialogRef.close(true);
+  }
+
+  refuse() {
+    this.dialogRef.close(false);
   }
 }
