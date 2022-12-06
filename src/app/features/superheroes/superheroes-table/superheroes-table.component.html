@@ -1,38 +1,6 @@
-<!--<table>-->
-<!--  <thead>-->
-<!--    <th>-->
-<!--      <tr>-->
-<!--        <td>Nome</td>-->
-<!--        <td>Supereroe</td>-->
-<!--        <td>Abilità</td>-->
-<!--        <td>Potenza</td>-->
-<!--      </tr>-->
-<!--    </th>-->
-<!--  </thead>-->
-<!--  <tbody>-->
-<!--  &lt;!&ndash; [ngStyle]="{'background-color' : pop.powerLevel > 5 ? 'red' : 'green'}" &ndash;&gt;-->
-<!--    <tr class="d-flex" *ngFor="let pop of popList" [ngClass]="{'bg-red' : pop.powerLevel > 5, 'bg-green' : pop.powerLevel < 6}">-->
-<!--      <td>{{pop.name}}</td>-->
-<!--      <td>{{pop.superheroName}}</td>-->
-<!--      <td>{{pop.superPower}}</td>-->
-<!--      <td>{{pop.powerLevel}}</td>-->
-<!--    </tr>-->
-<!--  </tbody>-->
-<!--</table>-->
 
-<!--<input [(ngModel)]="">-->
+<div class=padding-30>
 
-<!--<input [ngModel]="" [value]="">-->
-<!--<input ngModel="">-->
-
-
-
-
-  <!--- Note that these columns can be defined in any order.
-        The actual rendered columns are set as a property on the row definition" -->
-
-  <!-- Position Column -->
-<!--<table mat-table [dataSource]="popList" class="mat-elevation-z8">-->
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" *ngIf="dataSource.data.length>0">
 
 
@@ -102,33 +70,13 @@
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
 
+</div>
+
 
 <div class="d-flex justify-center align-center margin-10">
   <button mat-raised-button class="margin-10" color="primary" (click)="addSuperhero()">Aggiungi</button>
 </div>
-<!--
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-      <mat-label>Abilità</mat-label>
-      <input matInput name="superPower" [(ngModel)]="newSuperhero.superPower">
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-      <mat-label>Potenza</mat-label>
-      <mat-select name="powerLevel" [(ngModel)]="newSuperhero.powerLevel">
-        <mat-option value="1">1</mat-option>
-        <mat-option value="2">2</mat-option>
-        <mat-option value="3">3</mat-option>
-        <mat-option value="4">4</mat-option>
-        <mat-option value="5">5</mat-option>
-        <mat-option value="6">6</mat-option>
-        <mat-option value="7">7</mat-option>
-        <mat-option value="8">8</mat-option>
-        <mat-option value="9">9</mat-option>
-        <mat-option value="10">10</mat-option>
-      </mat-select>
-    </mat-form-field>
-  </form>
--->
+
 
 
 

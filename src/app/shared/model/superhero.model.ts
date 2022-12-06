@@ -1,4 +1,4 @@
-export interface PopModel {
+export interface SuperheroModel {
   name?: string;
   superheroName?: string;
   superPower?: string;

@@ -1,19 +1,17 @@
 import { Component } from '@angular/core';
-import {PopModel} from "../../../shared/model/pop.model";
+import {SuperheroModel} from "../../../shared/model/superhero.model";
 import {MatTableDataSource} from "@angular/material/table";
 import { MatDialog } from '@angular/material/dialog';
 import {DialogComponent} from "../../../shared/components/dialog/dialog.component";
-//import {PopModel} from "../../../shared/model/pop.model";
-//import {DialogComponent} from "../../../shared/components/dialog";
 
 @Component({
-  selector: 'app-pop-list',
-  templateUrl: './pop-list.component.html',
-  styleUrls: ['./pop-list.component.scss']
+  selector: 'app-superheroes-table',
+  templateUrl: './superheroes-table.component.html',
+  styleUrls: ['./superheroes-table.component.scss']
 })
 
-export class PopListComponent {
-  popList: PopModel[] = [
+export class SuperheroesTableComponent {
+  superheroesList: SuperheroModel[] = [
     {
       name: 'Bruce Wayne',
       superheroName: 'Batman',
@@ -42,15 +40,15 @@ export class PopListComponent {
   dataSource = new MatTableDataSource();
 
   constructor(public dialog: MatDialog) {
-    this.dataSource.data=this.popList;
+    this.dataSource.data=this.superheroesList;
   }
 
   addSuperhero(){
-    this.popList.push({isEditable: true});
-    this.dataSource.data=this.popList;
+    this.superheroesList.push({isEditable: true});
+    this.dataSource.data=this.superheroesList;
   }
 
-  openDialog(element: PopModel){
+  openDialog(element: SuperheroModel){
     let dialogRef = this.dialog.open(DialogComponent);
 
     dialogRef.afterClosed().subscribe(result => {
@@ -59,16 +57,16 @@ export class PopListComponent {
     });
 
   }
-  removeSuperhero(element: PopModel){
-      const index = this.popList.findIndex(el => el.name == element.name);
-      this.popList.splice(index,1);
-      this.dataSource.data=this.popList;
+  removeSuperhero(element: SuperheroModel){
+      const index = this.superheroesList.findIndex(el => el.name == element.name);
+      this.superheroesList.splice(index,1);
+      this.dataSource.data=this.superheroesList;
     };
 
-  isEditable(element: PopModel) {
+  isEditable(element: SuperheroModel) {
     element.isEditable=true;
   }
-  saveChanges(element: PopModel) {
+  saveChanges(element: SuperheroModel) {
     element.isEditable=false;
   }
 
